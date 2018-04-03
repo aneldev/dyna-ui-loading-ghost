@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", ["react"], factory);
+		define("dyna-ui-loading-ghost", ["react"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"));
+		exports["dyna-ui-loading-ghost"] = factory(require("react"));
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory(root["react"]);
+		root["dyna-ui-loading-ghost"] = factory(root["react"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -87,11 +87,8 @@ module.exports = __webpack_require__(1);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var DynaButton_1 = __webpack_require__(2);
-exports.DynaLoadingGhost = DynaButton_1.DynaButton;
-exports.EStyle = DynaButton_1.EStyle;
-exports.EColor = DynaButton_1.EColor;
-exports.ESize = DynaButton_1.ESize;
+var DynaLoadingGhost_1 = __webpack_require__(2);
+exports.DynaLoadingGhost = DynaLoadingGhost_1.DynaLoadingGhost;
 
 
 /***/ }),
@@ -113,51 +110,25 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(3);
 __webpack_require__(4);
-var EStyle;
-(function (EStyle) {
-    EStyle["ROUNDED"] = "ROUNDED";
-})(EStyle = exports.EStyle || (exports.EStyle = {}));
-var EColor;
-(function (EColor) {
-    EColor["WHITE_BLACK"] = "WHITE_BLACK";
-    EColor["WHITE_RED"] = "WHITE_RED";
-    EColor["BLACK_WHITE"] = "BLACK_WHITE";
-    EColor["TRANSPARENT_WHITE"] = "TRANSPARENT_WHITE";
-})(EColor = exports.EColor || (exports.EColor = {}));
-var ESize;
-(function (ESize) {
-    ESize["SMALL"] = "SMALL";
-    ESize["MEDIUM"] = "MEDIUM";
-    ESize["LARGE"] = "LARGE";
-    ESize["XLARGE"] = "XLARGE";
-})(ESize = exports.ESize || (exports.ESize = {}));
-var DynaButton = /** @class */ (function (_super) {
-    __extends(DynaButton, _super);
-    function DynaButton() {
+var DynaLoadingGhost = /** @class */ (function (_super) {
+    __extends(DynaLoadingGhost, _super);
+    function DynaLoadingGhost() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    DynaButton.prototype.render = function () {
-        var _a = this.props, children = _a.children, style = _a.style, color = _a.color, size = _a.size, href = _a.href, onClick = _a.onClick;
+    DynaLoadingGhost.prototype.render = function () {
+        var userClassName = this.props.className;
         var className = [
-            'dyna-button',
-            "dnbtn-style-" + style,
-            "dnbtn-color-" + color,
-            "dnbtn-size-" + size,
+            'dyna-loading-ghost',
+            userClassName || '',
         ].join(' ').trim();
-        return (React.createElement("a", { className: className, href: href, onClick: onClick },
-            React.createElement("button", null, children)));
+        return (React.createElement("div", { className: className }));
     };
-    DynaButton.defaultProps = {
-        children: null,
-        style: EStyle.ROUNDED,
-        color: EColor.WHITE_BLACK,
-        size: ESize.MEDIUM,
-        href: null,
-        onClick: function () { return undefined; },
+    DynaLoadingGhost.defaultProps = {
+        className: '',
     };
-    return DynaButton;
+    return DynaLoadingGhost;
 }(React.Component));
-exports.DynaLoadingGhost = DynaButton;
+exports.DynaLoadingGhost = DynaLoadingGhost;
 
 
 /***/ }),
@@ -187,8 +158,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-button.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-button.less");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./DynaLoadingGhost.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./DynaLoadingGhost.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -206,7 +177,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, ".dyna-button {\n  outline: none;\n}\n.dyna-button.dnbtn-style-ROUNDED {\n  font-size: 0;\n}\n.dyna-button.dnbtn-style-ROUNDED button {\n  outline: none;\n  border-style: solid;\n  cursor: pointer;\n  -webkit-transition: background-color 200ms ease-out;\n  transition: background-color 200ms ease-out;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-SMALL button {\n  padding: 2px 8px;\n  font-size: 8px;\n  line-height: 10px;\n  border-width: 1px;\n  border-radius: 8px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-SMALL button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-MEDIUM button {\n  padding: 4px 16px;\n  font-size: 14px;\n  line-height: 22px;\n  border-width: 1px;\n  border-radius: 16px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-MEDIUM button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-LARGE button {\n  padding: 8px 32px;\n  font-size: 26px;\n  line-height: 46px;\n  border-width: 1px;\n  border-radius: 32px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-LARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-XLARGE button {\n  padding: 16px 64px;\n  font-size: 40px;\n  line-height: 92px;\n  border-width: 2px;\n  border-radius: 64px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-XLARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button {\n  border-color: black;\n  background: white;\n  color: black;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button:hover {\n  background-color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button:active {\n  background-color: #d1d1d1;\n}\n.dyna-button.dnbtn-color-WHITE_RED button {\n  border-color: red;\n  background: white;\n  color: red;\n}\n.dyna-button.dnbtn-color-WHITE_RED button:hover {\n  background-color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-WHITE_RED button:active {\n  background-color: #d1d1d1;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button {\n  border-color: black;\n  background: black;\n  color: white;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button:hover {\n  background-color: #333333;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button:active {\n  background-color: #525252;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button {\n  border-color: white;\n  background: transparent;\n  color: white;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button:hover {\n  border-color: #e6e6e6;\n  color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button:active {\n  border-color: #d1d1d1;\n  color: #d1d1d1;\n}\n", ""]);
+exports.push([module.i, ".dyna-loading-ghost {\n  height: 100%;\n  -webkit-animation: loading-ghost-animation 1s infinite;\n          animation: loading-ghost-animation 1s infinite;\n  -webkit-animation-timing-function: linear;\n          animation-timing-function: linear;\n  background-repeat: no-repeat;\n  background-image: linear-gradient(83deg, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 85%);\n  background-size: 75% 100%;\n  background-position: -280% 0;\n}\n@-webkit-keyframes loading-ghost-animation {\n  to {\n    background-position: 400% 0;\n  }\n}\n@keyframes loading-ghost-animation {\n  to {\n    background-position: 400% 0;\n  }\n}\n", ""]);
 
 // exports
 
