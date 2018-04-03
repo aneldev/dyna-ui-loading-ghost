@@ -1,0 +1,17 @@
+.dyna-loading-ghost {
+    height: 100%;
+
+    animation: loading-ghost-animation 1s infinite;
+    animation-timing-function: linear;
+
+    background-repeat: no-repeat;
+    background-image: linear-gradient(83deg,  fade(white, 0) 15%, fade(white, 80%) 50%, fade(white, 0) 85%);
+    background-size: 75% 100%;
+    background-position: -280% 0;
+
+    @keyframes loading-ghost-animation {
+        to {
+            background-position: 400% 0;
+        }
+    }
+}
